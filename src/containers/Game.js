@@ -1,4 +1,4 @@
-import { connect } from 'readt-redux';
+import { connect } from 'react-redux';
 
 import App from '../App';
 
