@@ -22,7 +22,7 @@ const CannonBall = (props) => {
 CannonBall.propTypes = {
   position: PropTypes.shape({
     x: PropTypes.number.isRequired,
-    y: Proptypes.number.isRequires,
+    y: PropTypes.number.isRequires,
   }).isRequired,
 }
 
