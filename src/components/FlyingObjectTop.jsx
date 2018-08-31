@@ -40,7 +40,7 @@ const FlyingObjectTop = (props) => {
 
 };
 
-FlyindObjectTop.propTypes = {
+FlyingObjectTop.propTypes = {
   position: PropTypes.shape({
     x: PropTypes.number.isRequired,
     y: PropTypes.number.isRequired
