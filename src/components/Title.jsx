@@ -21,8 +21,8 @@ const Title = () => {
       x: 285,
       y: -50,
     },
-    endingAxis: {
-      x: 300,
+    endingAxis: { // increase x for longer text
+      x: 380,
       y: 0,
     }
   };
@@ -53,7 +53,9 @@ const Title = () => {
         <path id="AliensPath" d={pathFromBezierCurve(aliensLineCurve)} />
         <path id="GoHomePath" d={pathFromBezierCurve(goHomeLineCurve)} />
       </defs>
-
+      <text {...textStyle}>
+        <textPath xlinkHref="#AliensPath">Aliens,</textPath>
+      </text>
       <text {...textStyle}>
         <textPath xlinkHref="#GoHomePath">Go Home!</textPath>
       </text>
