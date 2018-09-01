@@ -1,22 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { gameHeight } from "../utils/constants";
 import Sky from "./Sky";
 import Ground from "./Ground";
 import CannonBore from "./CannonBore";
 import CannonBase from "./CannonBase";
 import CannonBall from "./CannonBall";
 import CurrentScore from "./CurrentScore";
-import FlyingObject from './FlyingObject';
-import Heart from './Heart';
-import StartGame from './StartGame';
-import Title from './Title';
+import FlyingObject from "./FlyingObject";
+import Heart from "./Heart";
+import StartGame from "./StartGame";
+import Title from "./Title";
 
 const Canvas = props => {
   const viewBox = [
     window.innerWidth / -2,
-    100 - window.innerHeight,
+    100 - gameHeight,
     window.innerWidth,
-    window.innerHeight
+    gameHeight
   ];
   return (
     <svg
@@ -37,13 +38,12 @@ const Canvas = props => {
       <CannonBase />
       <CannonBall position={{ x: 0, y: -100 }} />
       <CurrentScore score={15} />
-      <FlyingObject position={{x: -150, y: -300}}/>
-      <FlyingObject position={{x: 150, y: -300}}/>
-      <Heart position={{x: -300, y:45}}/>
-      <StartGame onClick={()=>console.log('testing')} />
-      <Title/>
+      <FlyingObject position={{ x: -150, y: -300 }} />
+      <FlyingObject position={{ x: 150, y: -300 }} />
+      <Heart position={{ x: -300, y: 45 }} />
+      <StartGame onClick={() => console.log("testing")} />
+      <Title />
     </svg>
-
   );
 };
 
