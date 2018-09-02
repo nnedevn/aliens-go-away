@@ -38,11 +38,21 @@ const Canvas = props => {
       <CannonBase />
       <CannonBall position={{ x: 0, y: -100 }} />
       <CurrentScore score={15} />
-      <FlyingObject position={{ x: -150, y: -300 }} />
-      <FlyingObject position={{ x: 150, y: -300 }} />
-      <Heart position={{ x: -300, y: 45 }} />
-      <StartGame onClick={() => console.log("testing")} />
-      <Title />
+
+      {!props.gameState.started && (
+        <g>
+          <StartGame onClick={() => props.startGame()} />
+          <Title />
+        </g>
+      )}
+
+      {props.gameState.started && (
+        <g>
+          <FlyingObject position={{ x: -150, y: -300 }} />
+          <FlyingObject position={{ x: 150, y: -300 }} />
+          <Heart position={{ x: -300, y: 45 }} />
+        </g>
+      )}
     </svg>
   );
 };
