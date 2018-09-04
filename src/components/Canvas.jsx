@@ -17,7 +17,7 @@ const Canvas = props => {
     window.innerWidth / -2,
     100 - gameHeight,
     window.innerWidth,
-    gameHeight
+    gameHeight,
   ];
   return (
     <svg
@@ -46,13 +46,22 @@ const Canvas = props => {
         </g>
       )}
 
-      {props.gameState.started && (
+      
         <g>
-          <FlyingObject position={{ x: -150, y: -300 }} />
-          <FlyingObject position={{ x: 150, y: -300 }} />
+          {props.gameState.flyingObjects.map(flyingObject => (
+           <FlyingObject
+            key={flyingObject.id}
+            position={flyingObject.position}
+          />
+          ))}
           <Heart position={{ x: -300, y: 45 }} />
         </g>
-      )}
+      
+      <FlyingObject 
+        key={3}
+        position={{x: -300, y: 50}}
+      />
+      
     </svg>
   );
 };

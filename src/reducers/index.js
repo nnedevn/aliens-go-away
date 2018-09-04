@@ -3,10 +3,12 @@ import moveObjects from './moveObjects';
 import startGame from './startGame';
 
 const initialGameState = {
-  started: false,
+  started: true,
   kills: 0,
   lives: 5,
-}
+  flyingObjects: [],
+  lastObjectCratedAt: new Date(),
+};
 
 const initialState = {
   angle: 45,
